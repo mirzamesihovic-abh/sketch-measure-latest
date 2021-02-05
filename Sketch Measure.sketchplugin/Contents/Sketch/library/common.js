@@ -20,7 +20,6 @@ function _(str, data) {
 var SM = {
 		init: function (context, command) {
 			Sketch = new API();
-			ga = new Analytics(context);
 
 			this.prefs = NSUserDefaults.standardUserDefaults();
 			this.context = context;
@@ -2687,7 +2686,6 @@ SM.extend({
 		return savePanel.URL().path();
 	},
 	exportPanel: function () {
-		if (ga) ga.sendEvent("spec", "export to spec viewer");
 		var self = this;
 		this.artboardsData = [];
 		this.selectionArtboards = {};
